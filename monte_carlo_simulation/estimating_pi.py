@@ -27,12 +27,13 @@ def monte_carlo(n_samples, radius=1):
 
     return estimated_pi 
 
+if __name__ == '__main__':
+    for n in range(1000, 100001, 10000):
+        estimated_pi = monte_carlo(n)
+        error = 100 * abs(math.pi - estimated_pi) / math.pi 
 
-for n in range(1000, 100001, 10000):
-    estimated_pi = monte_carlo(n)
-    error = 100 * abs(math.pi - estimated_pi) / math.pi 
-
-    print("Num of samples: {}, Estimated pi: {:.4f},  percentage of error: {:.4f}".format(n, estimated_pi, error))
+        print('Num of samples: {}, Estimated pi: {:.4f}, ' 
+              'percentage of error: {:.4f}'.format(n, estimated_pi, error))
 
 
     
